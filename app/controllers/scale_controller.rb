@@ -10,7 +10,7 @@ class ScaleController < ApplicationController
       @result = "#{@mm} M.M = #{@temp} C.M"
     elsif @mm == 0 || @mm.nil?
       @temp = @cm / 0.1
-      @result = "#{@inch} C.M = #{@temp} M.M"
+      @result = "#{@cm} C.M = #{@temp} M.M"
     else
       @result = "Please Enter Either Centimeter or Miliimeter, System Provide the next value after calculation!"
     end
@@ -97,10 +97,10 @@ class ScaleController < ApplicationController
    @inch = params[:inch].to_f 
 
     if @mtr == 0 || @mtr.nil?
-      @temp = @inch * 39.3701
+      @temp = @inch / 39.3701
       @result = "#{@inch} Inch = #{@temp} Meter"
     elsif @ft == 0 || @ft.nil?
-      @temp = @mtr / 39.3701
+      @temp = @mtr * 39.3701
       @result = "#{@mtr} Meter = #{@temp} Inch"
     else
       @result = "Please Enter Either Meter or Inch, System Provide the next value after calculation!"
@@ -108,10 +108,17 @@ class ScaleController < ApplicationController
   end
 
   def km_mile
-  end
+   @km = params[:km].to_f 
+   @mile = params[:mile].to_f 
 
-  def km_lightyear
-  end
-
-  
+    if @km == 0 || @km.nil?
+      @temp = @mile * 1.609344
+      @result = "#{@mile} Mile = #{@temp} Kilometer"
+    elsif @ft == 0 || @ft.nil?
+      @temp = @km / 1.609344
+      @result = "#{@km} Kilometer = #{@temp} Mile"
+    else
+      @result = "Please Enter Either Kilometer or Mile, System Provide the next value after calculation!"
+    end  
+  end  
 end

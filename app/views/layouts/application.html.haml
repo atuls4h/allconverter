@@ -17,6 +17,7 @@
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
 
+
   %body
     .navbar.navbar-default.navbar-fixed-top
       .container
@@ -28,17 +29,67 @@
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav.pull-right
             %li= link_to "link 1", "#"         
-    
+ 
+ 
+   
     .container
       .row
-        .col-lg-3
-          .well.sidebar-nav.sidebar-fixed
-            %h3 Sidebar
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "link 1", "#"
-              %li= link_to "link 2", "#"
-        .col-lg-9        
+        .col-lg-4
+          .nav-side-menu
+            .brand Brand Logo
+            %i.fa.fa-bars.fa-2x.toggle-btn{"data-target" => "#menu-content", "data-toggle" => "collapse"}
+            .menu-list
+              %ul#menu-content.menu-content.collapse.out
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-dashboard.fa-lg
+                    Dashboard
+                %li.collapsed{"data-target" => "#products", "data-toggle" => "collapse"}
+                  %a{:href => "#"}
+                    %i.fa.fa-arrows-h.fa-lg
+                    Length
+                    %span.arrow
+                %ul#products.sub-menu.collapse
+                  %li= link_to "Milimeter to Centimeter", scale_mm_cm_path
+                  %li= link_to "Centimeter to Foot", scale_cm_ft_path
+                  %li= link_to "Cenimeter to Inch", scale_cm_inch_path
+                  %li= link_to "Inch to Foot", scale_inch_ft_path
+                  %li= link_to "Millimeter to Inch", scale_mm_inch_path
+                  %li= link_to "Meter to Foot", scale_mtr_ft_path
+                  %li= link_to "Kilometer to Mile", scale_km_mile_path
+                  %li= link_to "Inch to Meter", scale_mtr_inch_path
+                %li.collapsed{"data-target" => "#service", "data-toggle" => "collapse"}
+                  %a{:href => "#"}
+                    %i.fa.fa-globe.fa-lg
+                    Services
+                    %span.arrow
+                %ul#service.sub-menu.collapse
+                  %li New Service 1
+                  %li New Service 2
+                  %li New Service 3
+                %li.collapsed{"data-target" => "#new", "data-toggle" => "collapse"}
+                  %a{:href => "#"}
+                    %i.fa.fa-car.fa-lg
+                    New
+                    %span.arrow
+                %ul#new.sub-menu.collapse
+                  %li New New 1
+                  %li New New 2
+                  %li New New 3
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-user.fa-lg
+                    Profile
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-users.fa-lg
+                    Users
+
+          
+
+
+  
+        .col-lg-8       
           .well
             = bootstrap_flash
             = yield
@@ -52,3 +103,13 @@
           %li= link_to "Feedback", "#"
 
       
+
+%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"} 
+
+      
+        
+      
+
+    
+
+    

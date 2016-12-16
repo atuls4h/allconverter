@@ -1,0 +1,20 @@
+
+%h1 Conversion between Kilometer and Mile 
+
+%form{:action => "km_mile", :methode => "get"}
+  .form-group
+    %label Kilometer
+    %input.form-control{:placeholder => "Enter Kilometer", :type => "text", :name => "km"}/
+  .form-group
+    %label Mile
+    %input.form-control{:placeholder => "Enter Mile", :type => "text", :name =>"mile"}/
+  %button.btn.btn-default{:type => "submit"} Submit
+
+  %p
+
+  .alert.alert-dismissible.alert-info
+    %button.close{"data-dismiss" => "alert", :type => "button"} ×
+    %center
+      %strong
+        %h2= @result
+
