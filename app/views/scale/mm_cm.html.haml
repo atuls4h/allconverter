@@ -1,0 +1,19 @@
+%h1 Conversion between Millimeter and Centimeter 
+
+%form{:action => "mm_cm", :methode => "get"}
+  .form-group
+    %label Centimeter
+    %input.form-control{:placeholder => "Enter Centimeter", :type => "text", :name => "cm"}/
+  .form-group
+    %label Millimeter
+    %input.form-control{:placeholder => "Enter Millimeter", :type => "text", :name =>"mm"}/
+  %button.btn.btn-default{:type => "submit"} Submit
+
+  %p
+
+  .alert.alert-dismissible.alert-info
+    %button.close{"data-dismiss" => "alert", :type => "button"} ×
+    %center
+      %strong
+        %h2= @result
+

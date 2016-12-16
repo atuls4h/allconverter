@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'scale/mm_cm'
+
+  get 'scale/mm_inch'
+
+  get 'scale/cm_inch'
+
+  get 'scale/cm_ft'
+
+  get 'scale/inch_ft'
+
+  get 'scale/mtr_ft'
+
+  get 'scale/mtr_inch'
+
+  get 'scale/km_mile'
+
+  get 'scale/km_lightyear'
+
   get 'welcome/index'
 
   get 'welcome/contact'

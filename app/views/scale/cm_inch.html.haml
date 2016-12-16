@@ -1,0 +1,19 @@
+%h1 Conversion between Inch and Centimeter 
+
+%form{:action => "cm_inch", :methode => "get"}
+  .form-group
+    %label Centimeter
+    %input.form-control{:placeholder => "Enter Centimeter", :type => "text", :name => "cm"}/
+  .form-group
+    %label Inch
+    %input.form-control{:placeholder => "Enter Inch", :type => "text", :name =>"inch"}/
+  %button.btn.btn-default{:type => "submit"} Submit
+
+  %p
+
+  .alert.alert-dismissible.alert-info
+    %button.close{"data-dismiss" => "alert", :type => "button"} ×
+    %center
+      %strong
+        %h2= @result
+
