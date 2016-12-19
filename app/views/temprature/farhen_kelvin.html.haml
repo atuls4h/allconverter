@@ -1,0 +1,18 @@
+%h3 Conversion Between Kelvin and Fahrenheit
+
+%form{:action => "ahren_kelvin", :methode => "get"}
+  .form-group
+    %lable Kelvin
+    %input.form-control{:placeholder => "Enter Kelvin", :type => "text", :name => "kel"}/
+  .form-grou
+    %lable Fahrenheit
+    %input.form-control{:placeholder => "Enter Fahrenheit", :type => "text", :name => "fehr"}/
+  %button.btn.btn-default{:type => "submit"} Convert
+
+  %p
+
+  .alert.alert-dismissible.alert-info
+    %button.close{"data-dismiss" => "alert", :type => "button"} x
+    %center
+      %strong
+        %h3 = @result

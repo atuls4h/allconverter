@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'temprature/centi_fahren'
+
+  get 'temprature/centi_kelvin'
+
+  get 'temprature/fahren_kelvin'
+
   get 'scale/mm_cm'
 
   get 'scale/mm_inch'
